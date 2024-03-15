@@ -1,1 +1,63 @@
-111
+<!-- 
+	项目来源
+	https://github.com/florinpop17/app-ideas/blob/08b771c8632d04c0d011f2600afcf2e44689918f/Projects/1-Beginner/Bin2Dec-App.md
+
+	JavaScript 二进制与十进制的相互转化
+	http://t.csdnimg.cn/JGX69
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bin2Dec</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<h1>Bin2Dec</h1>
+		<p id="errorMessage"></p>
+		<label for="userInput">输入一个二进制数:</label>
+		<input type="text" id="userInput" />
+		<button onclick="handleInput()">转换</button>
+		<label for="outPut">其十进制为:</label>
+		<input type="text" id="outPut" />
+		<script>
+			function handleInput() {
+				var userInput = document.getElementById("userInput").value;
+				validateString(userInput);
+				var outPut = parseInt(userInput, 2);
+				var outPutHtml = document.getElementById("outPut");
+				document.getElementById("outPut").value = outPut;
+				console.log(parseInt(userInput, 2));
+			}
+			function validateString(str) {
+				if (str.length > 8) {
+					// throw new Error("最多输入8位二进制数字");
+					// console.error(error.message);
+					var errorDisplay = "Error: 最多输入8位二进制数字";
+					var errorMessage = document.getElementById("errorMessage");
+					errorMessage.textContent = errorDisplay;
+					throw new Error("最多输入8位二进制数字");
+					console.error(error.message);
+				}
+				for (let i = 0; i < str.length; i++) {
+					if (str[i] !== "0" && str[i] !== "1") {
+						// throw new Error("只能输入'0'或'1'");
+						// console.error(error.message);
+						var errorDisplay = "Error: 只能输入'0'或'1' ";
+						var errorMessage =
+							document.getElementById("errorMessage");
+						errorMessage.textContent = errorDisplay;
+						throw new Error("只能输入'0'或'1'");
+						console.error(error.message);
+					}
+				}
+				return true;
+			}
+		</script>
+	</body>
+</html>
