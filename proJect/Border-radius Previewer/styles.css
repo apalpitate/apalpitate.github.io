@@ -1,3 +1,50 @@
-body{
-    text-align: center;
+/* styles.css - 页面整体样式定义 */
+
+/* 设置body的基本样式 */
+body {
+    font-family: Arial, sans-serif; /* 设置字体为Arial或无衬线字体 */
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 子元素居中对齐 */
+    margin: 2rem; /* 设置外边距 */
+}
+
+/* 定义预览容器、控制容器和CSS代码容器的通用样式 */
+.preview-container,
+.controls-container,
+.css-code-container {
+    width: 60%; /* 设置宽度为60% */
+    margin-bottom: 1rem; /* 设置底部外边距为1rem */
+}
+
+/* 预览框样式 */
+.preview-box {
+    width: 200px; /* 设置宽度为200px */
+    height: 200px; /* 设置高度为200px */
+    background-color: #0daada; /* 设置背景色 */
+    border: 2px solid #333; /* 设置边框 */
+    box-sizing: border-box; /* 包含边框尺寸计算 */
+}
+
+/* 控制组样式，用于包裹单个功能控制项 */
+.control-group {
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 子元素居中对齐 */
+    margin-bottom: 0.5rem; /* 设置底部外边距为0.5rem */
+}
+
+/* 控制组中的标签样式 */
+.control-group label {
+    margin-right: 0.5rem; /* 设置右侧外边距为0.5rem */
+}
+
+/* CSS代码容器中的代码预览样式 */
+.css-code-container pre {
+    white-space: pre-wrap; /* 允许换行 */
+    word-break: break-all; /* 长单词断行 */
+}
+
+/* 复制按钮样式，设置光标为指针形状 */
+.copy-btn {
+    cursor: pointer;
 }
